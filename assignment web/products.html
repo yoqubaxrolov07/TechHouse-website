@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHouse - Products</title>
+    <link rel="stylesheet" href=".//css/style.css">
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>TechHouse</h1></a>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link active">Products</a>
+                    <a href="cart.html" class="nav-link">Cart <span class="cart-count" id="cartCount">0</span></a>
+                    <a href="contact.html#contact" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link" id="profileBtn">Profile</a>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button id="searchBtn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PRODUCTS PAGE CONTENT -->
+    <main class="products-page">
+        <div class="container">
+            <h1 class="page-title" id="pageTitle">Products by Category or Search</h1>
+
+            <!-- Category Filter Buttons -->
+            <div class="filter-section">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('Kitchen Appliances')">Kitchen Appliances</button>
+                <button class="filter-btn" onclick="filterProducts('Cleaning Devices')">Cleaning Devices</button>
+                <button class="filter-btn" onclick="filterProducts('Smart Home')">Smart Home</button>
+                <button class="filter-btn" onclick="filterProducts('Personal Care')">Personal Care</button>
+            </div>
+
+            <!-- PRODUCTS GRID -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+
+            <!-- NO RESULTS MESSAGE -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <p>No products found matching your search.</p>
+                <button class="btn btn-primary" onclick="clearFilters()">Show All Products</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechHouse</h3>
+                    <p>TechHouse is committed to providing the best tech solutions and customer support.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect with us</h3>
+                    <div class="social-icons">
+                        <span>📘</span>
+                        <span>🐦</span>
+                        <span>📷</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIN/PROFILE MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login or Create Profile</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <script src=".//js/main.js"></script>
+</body>
+</html>

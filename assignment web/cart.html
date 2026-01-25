@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechHouse - Cart</title>
+  <link rel="stylesheet" href=".//css/style.css">
+</head>
+
+<body>
+  <!-- HEADER SECTION -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <h1>TechHouse</h1>
+          </a>
+        </div>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="cart.html" class="nav-link active">Cart <span class="cart-count" id="cartCount">0</span></a>
+          <a href="contact.html#contact" class="nav-link">Contact</a>
+          <a href="#" class="nav-link" id="profileBtn">Profile</a>
+        </nav>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search products...">
+          <button id="searchBtn">🔍</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART PAGE CONTENT -->
+  <main class="cart-page">
+    <div class="container">
+      <h1 class="page-title">My Cart</h1>
+
+      <div class="cart-layout">
+        <!-- CART ITEMS SECTION -->
+        <div class="cart-items" id="cartItems">
+          <!-- Cart items will be dynamically inserted here by JavaScript -->
+        </div>
+
+        <!-- CART SUMMARY SECTION -->
+        <div class="cart-summary">
+          <h2>Order Summary</h2>
+
+          <div class="summary-row">
+            <span>Subtotal:</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Delivery:</span>
+            <span id="deliveryFee">Free</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Payment:</span>
+            <span id="paymentMethod">Cash</span>
+          </div>
+
+          <hr>
+
+          <div class="summary-row total">
+            <span><strong>Total:</strong></span>
+            <span id="total"><strong>$0.00</strong></span>
+          </div>
+
+          <!-- CHECKOUT FORM -->
+          <div class="checkout-form">
+            <h3>Personal Information</h3>
+            <div class="form-group">
+              <input type="text" placeholder="Name" id="customerName">
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Phone" id="customerPhone">
+            </div>
+
+            <h3>Select a shipping address</h3>
+            <div class="form-group">
+              <input type="text" placeholder="Country" id="country">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="City" id="city">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Street" id="street">
+            </div>
+
+            <h3>Payment Option</h3>
+            <div class="payment-options">
+              <div class="form-group payment-option">
+                <label class="payment-label">
+                  <input type="radio" name="payment" value="cash" id="cashPayment" checked>
+                  <span class="radio-custom"></span>
+                  <div class="payment-info">
+                    <span class="payment-icon">💵</span>
+                    <span class="payment-text">Cash payment</span>
+                  </div>
+                </label>
+              </div>
+
+              <div class="form-group payment-option">
+                <label class="payment-label">
+                  <input type="radio" name="payment" value="card" id="cardPayment">
+                  <span class="radio-custom"></span>
+                  <div class="payment-info">
+                    <span class="payment-icon">💳</span>
+                    <span class="payment-text">Card payment</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- CARD DETAILS (Ko'rinmaydi, card tanlansa ko'rinadi) -->
+            <div id="cardDetails" style="display: none;">
+              <h3>Card Details</h3>
+              <div class="form-group">
+                <input type="text" placeholder="Card Number" id="cardNumber" maxlength="19">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" placeholder="MM/YY" id="cardExpiry" maxlength="5">
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="CVV" id="cardCVV" maxlength="3">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Cardholder Name" id="cardName">
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="confirmBtn">Confirm</button>
+            <button class="btn btn-primary btn-block" id="orderBtn">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMPTY CART MESSAGE -->
+      <div class="empty-cart" id="emptyCart" style="display: none;">
+        <p>Your cart is empty</p>
+        <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>TechHouse</h3>
+          <p>TechHouse is committed to providing the best tech solutions and customer support.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect with us</h3>
+          <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📷</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIN/PROFILE MODAL -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login or Create Profile</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+      </form>
+    </div>
+  </div>
+
+  <script src=".//js/main.js"></script>
+</body>
+
+</html>

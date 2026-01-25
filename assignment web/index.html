@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHouse - Home</title>
+    <link rel="stylesheet" href=".//css/style.css">
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>TechHouse</h1></a>
+                </div>
+
+                <nav class="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="cart.html" class="nav-link">Cart <span class="cart-count" id="cartCount">0</span></a>
+                    <a href="contact.html#contact" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link" id="profileBtn">Profile</a>
+                </nav>
+
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button id="searchBtn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2 class="hero-title">Welcome to TechHouse</h2>
+                <p class="hero-subtitle">Explore the latest tech innovation</p>
+                <button class="btn btn-primary" id="shopNowBtn">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <section class="featured-products" id="featuredProducts">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" onclick="goToProduct(1)">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400" alt="Hand Mixer">
+                    <div class="product-info">
+                        <h3 class="product-name">Cuisinart 9-Speed Hand Mixer</h3>
+                        <p class="product-rating">⭐ 4.8</p>
+                        <p class="product-price">$66.66</p>
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":1,"name":"Cuisinart 9-Speed Hand Mixer","price":66.66,"category":"Kitchen Appliances","image":"https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400","description":"Powerful, convenient, and multifunctional - with this 9-speed mixer, you can easily prepare dough, cream, sauce, and many other recipes. Ergonomic gripper, smooth speed change, and additional accessories make working with the mixer more convenient and precise.","quantity":20}'>Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" onclick="goToProduct(2)">
+                    <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400" alt="Air Fryer">
+                    <div class="product-info">
+                        <h3 class="product-name">Chefman 12-Quart 8-in-1 Air Fryer</h3>
+                        <p class="product-rating">⭐ 4.6</p>
+                        <p class="product-price">$52.78</p>
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":2,"name":"Chefman 12-Quart 8-in-1 Air Fryer","price":52.78,"category":"Kitchen Appliances","image":"https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400","description":"8-in-1 multifunctional air fryer with 12-quart capacity. Cook healthier meals with up to 85% less oil. Features multiple cooking modes including air fry, roast, bake, and more.","quantity":33}'>Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" onclick="goToProduct(3)">
+                    <img src="https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=400" alt="Blender">
+                    <div class="product-info">
+                        <h3 class="product-name">Ninja Detect Power Blender Pro</h3>
+                        <p class="product-rating">⭐ 4.5</p>
+                        <p class="product-price">$29.80</p>
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":3,"name":"Ninja Detect Power Blender Pro","price":29.80,"category":"Kitchen Appliances","image":"https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=400","description":"Professional-grade blender with smart detect technology. Automatically adjusts power and blending time based on container size. Perfect for smoothies, soups, and more.","quantity":146}'>Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" onclick="goToProduct(4)">
+                    <img src="https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=400" alt="Microwave">
+                    <div class="product-info">
+                        <h3 class="product-name">COMFEE' EM720CPL-PMB Countertop</h3>
+                        <p class="product-rating">⭐ 4.3</p>
+                        <p class="product-price">$249.90</p>
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":4,"name":"COMFEE EM720CPL-PMB Countertop","price":249.90,"category":"Kitchen Appliances","image":"https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=400","description":"Compact and powerful microwave oven perfect for any kitchen. Features multiple power levels, quick-cook presets, and easy-to-clean interior.","quantity":9}'>Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" onclick="goToProduct(5)">
+                    <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=400" alt="Vacuum">
+                    <div class="product-info">
+                        <h3 class="product-name">Vacuum with Automatic Cord Rewind</h3>
+                        <p class="product-rating">⭐ 4.2</p>
+                        <p class="product-price">$70.10</p>
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":5,"name":"Vacuum with Automatic Cord Rewind","price":70.10,"category":"Cleaning Devices","image":"https://images.unsplash.com/photo-1558317374-067fb5f30001?w=400","description":"Powerful upright vacuum cleaner with automatic cord rewind feature. HEPA filtration system captures 99.9% of dust and allergens.","quantity":23}'>Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" onclick="goToProduct(6)">
+                    <img src="https://www.lakeland.co.uk/inspiration/wp-content/uploads/2024/01/Steam-cleaning-Featured-Image-Lakeland-Inspiration.jpg" alt="Steam Cleaner">
+                    <div class="product-info">
+                        <h3 class="product-name">Handheld Steam Cleaner, 9-Piece Set</h3>
+                        <p class="product-rating">⭐ 4.6</p>
+                        <p class="product-price">$45.30</p>
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":6,"name":"Handheld Steam Cleaner 9-Piece Set","price":45.30,"category":"Cleaning Devices","image":"https://www.lakeland.co.uk/inspiration/wp-content/uploads/2024/01/Steam-cleaning-Featured-Image-Lakeland-Inspiration.jpg","description":"Complete 9-piece handheld steam cleaning system. Chemical-free cleaning for multiple surfaces. Includes various attachments for versatile cleaning.","quantity":43}'>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterByCategory('Kitchen Appliances')">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300" alt="Kitchen">
+                    <h3>Kitchen Appliances</h3>
+                </div>
+
+                <div class="category-card" onclick="filterByCategory('Cleaning Devices')">
+                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300" alt="Cleaning">
+                    <h3>Cleaning Devices</h3>
+                </div>
+
+                <div class="category-card" onclick="filterByCategory('Smart Home')">
+                    <img src="https://reviewed-com-res.cloudinary.com/image/fetch/s--n5BAQH68--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1578673252280/Smart.png" alt="Smart Home">
+                    <h3>Smart Home</h3>
+                </div>
+
+                <div class="category-card" onclick="filterByCategory('Personal Care')">
+                    <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=300" alt="Personal Care">
+                    <h3>Personal Care</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAR PRODUCTS SECTION -->
+    <section class="popular-products">
+        <div class="container">
+            <h2 class="section-title">Popular Products</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="goToProduct(7)">
+                    <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=400" alt="Coffee Maker">
+                    <div class="product-info">
+                        <h3 class="product-name">Programmable Coffee Maker</h3>
+                        <p class="product-rating">⭐ 4.7</p>
+                        <p class="product-price">$89.99</p>
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":7,"name":"Programmable Coffee Maker","price":89.99,"category":"Kitchen Appliances","image":"https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=400","description":"Programmable coffee maker with 24-hour timer. Brew delicious coffee exactly when you want it. Features auto-shutoff and keep-warm function.","quantity":15}'>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="goToProduct(8)">
+                    <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400" alt="Smart Speaker">
+                    <div class="product-info">
+                        <h3 class="product-name">Smart Speaker with Voice Control</h3>
+                        <p class="product-rating">⭐ 4.9</p>
+                        <p class="product-price">$129.99</p>
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":8,"name":"Smart Speaker with Voice Control","price":129.99,"category":"Smart Home","image":"https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400","description":"Voice-activated smart speaker with premium sound quality. Control your smart home, play music, get weather updates, and more with simple voice commands.","quantity":28}'>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="goToProduct(9)">
+                    <img src="https://www.hailyourhair.co.uk/cdn/shop/products/hailyourhairhairdryer10.jpg?v=1651063895" alt="Hair Dryer">
+                    <div class="product-info">
+                        <h3 class="product-name">Professional Hair Dryer</h3>
+                        <p class="product-rating">⭐ 4.8</p>
+                        <p class="product-price">$79.99</p> 
+                        <button class="btn btn-cart" onclick="event.stopPropagation(); addToCartFromButton(this)" data-product='{"id":9,"name":"Professional Hair Dryer","price":79.99,"category":"Personal Care","image":"https://www.hailyourhair.co.uk/cdn/shop/products/hailyourhairhairdryer10.jpg?v=1651063895","description":"Salon-quality hair dryer with ionic technology. Multiple heat and speed settings for all hair types. Lightweight and ergonomic design.","quantity":11}'>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+<section class="about-us">
+  <h2>About Us</h2>
+
+  <p class="about-intro">
+    TechHouse – modern household appliances and small appliances
+    seller online and offline store network.
+  </p>
+
+  <div class="about-content">
+    <div class="about-block">
+      <h3>Our goal is:</h3>
+      <ul>
+        <li>Provide customers with a convenient and simple online shopping experience.</li>
+        <li>Provide reliable, high-quality, and guaranteed products.</li>
+        <li>Provide prompt service and professional support.</li>
+      </ul>
+    </div>
+
+    <div class="about-block">
+      <h3>Why choose us:</h3>
+      <ul class="check-list">
+        <li>Affordable prices</li>
+        <li>Delivery & in-store pickup</li>
+        <li>Loyalty / membership benefits</li>
+        <li>Safe & easy shopping process</li>
+      </ul>
+    </div>
+  </div>
+
+  <button class="about-btn">Who we are & what we do</button>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechHouse</h3>
+                    <p>TechHouse is committed to providing the best tech solutions and customer support.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect with us</h3>
+                    <div class="social-icons">
+                        <span>📘</span>
+                        <span>🐦</span>
+                        <span>📷</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIN/PROFILE MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login or Create Profile</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <script src=".//js/main.js"></script>
+</body>
+</html>

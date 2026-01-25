@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - TechHouse</title>
+    <link rel="stylesheet" href=".//css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>TechHouse</h1></a>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="cart.html" class="nav-link">Cart <span class="cart-count" id="cartCount">0</span></a>
+                    <a href="contact.html#contact" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link" id="profileBtn">Profile</a>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button id="searchBtn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PRODUCT DETAIL SECTION -->
+    <main class="product-detail-page">
+        <div class="container">
+            <div class="product-detail-layout">
+                <!-- Product Image -->
+                <div class="product-image-section">
+                    <img id="productImage" src="" alt="Product Image">
+                </div>
+
+                <!-- Product Information -->
+                <div class="product-detail-info">
+                    <h1 id="productName">Product Name</h1>
+                    
+                    <div class="product-meta">
+                        <p class="product-rating">⭐ <span id="productRating">0</span></p>
+                        <p class="product-category">Category: <span id="productCategory"></span></p>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3>Specifications:</h3>
+                        <p id="productSpecs"></p>
+                    </div>
+
+                    <div class="product-price-section">
+                        <p class="product-price">$<span id="productPrice">0.00</span></p>
+                        <p class="product-stock">In Stock: <span id="productStock">0</span> units</p>
+                    </div>
+
+                    <button class="btn btn-primary btn-large" id="addToCartDetailBtn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- PRODUCT DESCRIPTION -->
+            <div class="product-description-section">
+                <h2>Product Description</h2>
+                <p id="productDescription"></p>
+            </div>
+
+            <!-- RELATED PRODUCTS -->
+            <div class="related-products-section">
+                <h2 class="section-title">Related Products</h2>
+                <div class="products-grid" id="relatedProductsGrid">
+                    <!-- Related products will be added here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechHouse</h3>
+                    <p>TechHouse is committed to providing the best tech solutions and customer support.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect with us</h3>
+                    <div class="social-icons">
+                        <span>📘</span>
+                        <span>🐦</span>
+                        <span>📷</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login or Create Profile</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <script src=".//js/main.js"></script>
+</body>
+</html>
