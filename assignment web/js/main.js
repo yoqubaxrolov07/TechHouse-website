@@ -113,7 +113,7 @@ const allProducts = [
 // 
 // INITIALIZATION
 // 
-
+// Brauzer HTML to'liq o'qib keyin js ishga tushadi
 document.addEventListener('DOMContentLoaded', function() {
   initializeApp();
 });
@@ -135,7 +135,7 @@ function initializeApp() {
 // 
 
 function updateCartCount() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];  
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   
   const cartCounts = document.querySelectorAll('.cart-count');
@@ -254,10 +254,10 @@ function initializeAddToCart() {
           const product = JSON.parse(productData);
           addProductToCart(product);
           
-          this.textContent = 'Qo\'shildi!';
+          this.textContent = 'Added to Cart!';
           this.style.backgroundColor = '#27ae60';
           
-          setTimeout(() => {
+          setTimeout(() => {    
               this.textContent = 'Add to Cart';
               this.style.backgroundColor = '';
           }, 1000);
